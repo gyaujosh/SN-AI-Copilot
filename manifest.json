@@ -1,0 +1,66 @@
+{
+  "manifest_version": 3,
+  "name": "SN AI Copilot",
+  "short_name": "SN Copilot",
+  "description": "AI-powered assistant for ServiceNow — research, debug, and change your instance in plain English.",
+  "version": "0.2.0",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "cookies",
+    "sidePanel"
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.service-now.com/*"
+      ],
+      "exclude_matches": [
+        "*://*/*?XML*",
+        "*://*/*&XML*",
+        "*://*/*?WSDL*",
+        "*://*/*&WSDL*"
+      ],
+      "js": [
+        "src/content/content_script.ts"
+      ],
+      "all_frames": false,
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "src/sidepanel/sidepanel.html"
+  },
+  "action": {
+    "default_title": "Open SN AI Copilot",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "inject.js"
+      ],
+      "matches": [
+        "https://*.service-now.com/*"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "https://*.service-now.com/*"
+  ]
+}

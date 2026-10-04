@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    // src/ is (becoming) strict; test files are not. Under strict, a hand-built
+    // mock almost never matches its interface exactly, and the resulting
+    // variance errors say nothing about whether the test is correct. What is
+    // worth catching here is structural drift — a fixture that no longer
+    // satisfies the props a component requires — and that is reported either
+    // way. This config exists so those errors are seen at all: the root
+    // tsconfig only includes src/, so test/ and the build configs were never
+    // typechecked.
+    "strict": false,
+    "types": ["vite/client", "chrome"]
+  },
+  "include": ["test", "preview", "vite.config.ts", "vite.preview.config.ts", "vitest.config.ts"]
+}

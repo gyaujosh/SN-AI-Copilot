@@ -1,0 +1,30 @@
+# Dependencies, rebuilt with `npm ci`. The built extension in dist/ is
+# committed so it can be loaded straight from a checkout; rebuild it with
+# `npm run build` before committing a source change.
+node_modules/
+coverage/
+.vite/
+
+# Packaged extensions and their signing keys. Never commit a .pem: it is the
+# private key that identifies your published extension.
+*.zip
+*.crx
+*.pem
+
+# Local configuration. Instance presets are compiled into dist/, so a private
+# preset file stays on your machine (see config/README.md) — and build the
+# committed dist/ without one.
+config/*.local.json
+.env
+.env.*
+
+# Local assistant/editor workspaces (worktrees, local settings).
+.claude/
+
+# OS and editor litter.
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+npm-debug.log*

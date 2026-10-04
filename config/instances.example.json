@@ -1,0 +1,5 @@
+[
+  { "label": "Dev", "host": "yourcompanydev.service-now.com", "role": "dev" },
+  { "label": "Test", "host": "yourcompanytest.service-now.com", "role": "test" },
+  { "label": "Prod", "host": "yourcompany.service-now.com", "role": "prod" }
+]
