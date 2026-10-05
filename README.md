@@ -7,7 +7,7 @@ An open-source Chrome extension that puts an AI assistant in a side panel next t
 </p>
 
 <p align="center">
-  ▶️ <b><a href="YOUTUBE_LINK">Watch the 3-minute walkthrough</a></b>: install, your first request, and building a catalog item.
+  ▶️ <b><a href="https://youtu.be/2L_xw-tpbrc">Watch the 3-minute walkthrough</a></b>: install, your first request, and building a catalog item.
 </p>
 
 <p align="center">
