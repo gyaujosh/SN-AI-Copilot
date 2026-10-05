@@ -2,6 +2,18 @@
 
 An open-source Chrome extension that puts an AI assistant in a side panel next to ServiceNow. Ask about the page you're on, research flows and scripts, debug behavior, and make changes through an approval-gated agent — using your own Claude, OpenAI or OpenRouter API key.
 
+<p align="center">
+  <img src="docs/demo.gif" width="440" alt="SN AI Copilot working through an approved plan: a catalog item, its variables and UI policies, one step at a time">
+</p>
+
+<p align="center">
+  ▶️ <b><a href="YOUTUBE_LINK">Watch the 3-minute walkthrough</a></b>: install, your first request, and building a catalog item.
+</p>
+
+<p align="center">
+  <a href="#install">Install</a> · <a href="#set-up-two-minutes">Set up</a> · <a href="#environments-and-safety">Safety</a> · <a href="#privacy">Privacy</a>
+</p>
+
 > **Not affiliated with ServiceNow, Anthropic, OpenAI or OpenRouter.** ServiceNow is a trademark of ServiceNow, Inc.; the other names are trademarks of their owners. This is an independent community project.
 
 ## What it does
@@ -17,17 +29,19 @@ An open-source Chrome extension that puts an AI assistant in a side panel next t
 ## Requirements
 
 - **Chrome 116 or later** (or another Chromium browser with the Side Panel API).
-- **Node.js 22.22+ or 24.15+** to build it (`.nvmrc` is included).
 - **An API key** from at least one of [Anthropic](https://console.anthropic.com/), [OpenAI](https://platform.openai.com/api-keys) or [OpenRouter](https://openrouter.ai/keys). Usage is billed by that provider to your account.
 - **A ServiceNow instance on `*.service-now.com`** you can sign in to. A free [Personal Developer Instance](https://developer.servicenow.com/) is perfect for trying it out.
+- **Node.js 22.22+ or 24.15+**, only if you build it yourself (`.nvmrc` is included).
 
 ## Install
 
-The extension is not on the Chrome Web Store. The built extension is included in the repository's `dist/` folder, so there is nothing to build:
+The extension is not on the Chrome Web Store. The built extension is included in the repository's `dist/` folder, so there is nothing to build. Get the code:
 
 ```bash
-git clone <this repository's URL>
+git clone https://github.com/gyaujosh/SN-AI-Copilot.git
 ```
+
+Or click **Code → Download ZIP** at the top of this page and unzip it.
 
 Then load it into Chrome:
 
@@ -35,7 +49,7 @@ Then load it into Chrome:
 2. Click **Load unpacked** and choose the `dist/` folder.
 3. Pin the extension if you like, open a ServiceNow tab, and click the extension's icon. The side panel opens.
 
-To update later: `git pull`, then click the reload icon on the extension's card in `chrome://extensions` and refresh any open ServiceNow tabs once.
+To update later: `git pull` (or download the ZIP again), then click the reload icon on the extension's card in `chrome://extensions` and refresh any open ServiceNow tabs once.
 
 To build it yourself instead (after changing the code, or to check that `dist/` matches the source): `npm ci && npm run build`.
 
